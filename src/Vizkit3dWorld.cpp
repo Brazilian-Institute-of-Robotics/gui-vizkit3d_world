@@ -105,6 +105,7 @@ void Vizkit3dWorld::run() {
         widget->setFixedSize(cameraWidth, cameraHeight); //set the window size
         widget->setCameraManipulator(vizkit3d::TRACKBALL_MANIPULATOR);
         widget->getPropertyWidget()->hide(); //hide the right property widget
+        widget->getView(0)->getCamera()->setCullingMode(osg::CullSettings::VIEW_FRUSTUM_CULLING | osg::CullSettings::SMALL_FEATURE_CULLING);
         widget->getView(0)->getCamera()->setComputeNearFarMode(osg::CullSettings::DO_NOT_COMPUTE_NEAR_FAR);
         applyCameraParams();
 
